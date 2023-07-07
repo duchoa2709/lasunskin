@@ -1,0 +1,393 @@
+* {
+    font-family: Kanit;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+}
+
+header {
+    padding-top: 20px;
+    flex-shrink: 0;
+    background: #000;
+}
+
+.shopping{
+    position: relative;
+}
+
+.shopping::after{
+    content: "0";
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    right: 6px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.navigation {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.logo {
+    padding-top: 25px;
+}
+
+.text-left {
+    margin-left: 10px;
+}
+
+.text-right {
+    margin-right: 10px;
+}
+
+.call {
+    margin: 0 10px;
+    width: 16px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.line {
+    background: #494949;
+    margin: 0 10px;
+    width: 100%;
+    height: 1px;
+    margin-top: 30px;
+}
+
+.tab_link_active {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tab_link {
+    margin: 0 10px;
+    color: #ffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tab_link_active {
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
+.header_tag {
+    padding: 10px 0;
+    margin: 0 -2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+footer {
+    background-color: #000;
+    padding: 5% 0;
+}
+
+footer .grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.colum1 {
+    margin: 0 -12%;
+}
+
+.colum1>.logo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.colum1>.textLogo {
+    width: 32.786px;
+    height: 32.552px;
+    flex-shrink: 0;
+}
+
+.font {
+    color: #ffff;
+    text-align: center;
+    font-size: 17px;
+    font-family: Kanit;
+    font-weight: 300;
+}
+
+footer .nameCompany {
+
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8% 0;
+}
+
+.comapyLocation {
+    text-align: left;
+}
+
+.colum1>.phone {
+    text-align: left;
+    padding: 2% 0;
+}
+
+.colum1>.email {
+    text-align: left;
+}
+
+.colum2>.font {
+    text-align: left;
+    margin-left: 20%;
+}
+
+.colum2>h2 {
+    padding-bottom: 10%;
+}
+
+.colum2>img {
+    padding-right: 20px;
+}
+
+.colum2 a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.colum2>.font>div {
+    padding-bottom: 6%;
+}
+
+.logoShop {
+    padding-right: 10px;
+    padding-bottom: 10%;
+}
+
+.phone2 {
+    padding-bottom: 10%;
+    font-size: 27px;
+}
+
+.colum2>.hootline {
+    padding-bottom: 0%;
+}
+
+.cpLeft {
+    text-align: left;
+    font-size: 14px;
+    float: left;
+}
+
+.cpRight {
+    text-align: right;
+    font-size: 14px;
+    float: right;
+}
+
+.copyright {
+    background-color: #0D0D0D;
+    padding: 1% 0;
+    display: flex;
+}
+
+.cpRight>a {
+    color: #ffff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    display: block;
+}
+
+.page-title {
+    position: relative;
+    padding: 15px 0;
+}
+
+.page-title::before {
+    content: "";
+    color: #333;
+}
+
+.page-title a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.page-title a:hover {
+    text-decoration: underline;
+}
+
+.gradient {
+    position: relative;
+    width: 100%;
+}
+
+.img-gradient::before {
+    content: "";
+    background-image: linear-gradient(to top, #ff000000 0%, #72713426 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+.img_header {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.img_header img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info::before {
+    content: "NEW";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 63px;
+    height: 35px;
+    background-color: #E1BD54;
+    border-radius: 30px;
+    padding: 5px 12px;
+}
+
+
+.info::after {
+    content: "30%";
+    text-align: center;
+    color: #FFFFFF;
+    width: 63px;
+    height: 35px;
+    background-color: #333333;
+    border-radius: 30px;
+    padding: 5px 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body .card-title a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.infoProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 10px;
+    padding: 20px 0;
+}
+
+.img_product:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.loadMoreProduct {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 205px;
+    height: 45px;
+    /* background lấy nền */
+    background: #FFFFFF;
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    border: 1px solid #333;
+}
+
+.loadMoreProduct:hover {
+    background: #333;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.content {
+    padding-bottom: 10%;
+}
+
+.content .btn-daMun {
+    width: 242px;
+    height: 44px;
+    border: 1px solid #E7C35C;
+    background-color: #FFF;
+    color: rgba(231, 195, 92, 1);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.btn-style {
+    width: 242px;
+    height: 44px;
+    border: 0.5px solid rgba(0, 0, 0, 0.30);
+    background: #FFF;
+    color: rgba(51, 51, 51, 1);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.btn-daNam {
+    margin: 0 5px;
+}
+
+.button-tab {
+    padding-bottom: 10%;
+}
+
+.btn-sapXep {
+    width: 160px;
+    height: 44px;
+    border: 0.5px solid rgba(0, 0, 0, 0.30);
+    background: #FFF;
+    color: rgba(51, 51, 51, 1);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 30px;
+    /* button right */
+    float: right;
+}

@@ -539,28 +539,53 @@ footer .nameCompany {
     padding-bottom: 0%;
 }
 
-.cpLeft {
-    text-align: left;
-    font-size: 14px;
-    float: left;
-}
-
-.cpRight {
-    text-align: right;
-    font-size: 14px;
-    float: right;
-}
-
 .copyright {
-    background-color: #0D0D0D;
-    padding: 1% 0;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cpRight>a {
-    color: #ffff;
+.copyright .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.copyright .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.copyright div {
     text-decoration: none;
-    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.cpLeft {
+    font-size: 14px;
+    font-weight: 275;
+    line-height: 26px;
+}
+
+.cpRight a {
+    text-decoration: none;
+    color: #fff;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 275;
+    line-height: 20px;
 }
 
 #back-to-top {

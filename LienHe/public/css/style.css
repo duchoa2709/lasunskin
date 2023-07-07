@@ -34,6 +34,16 @@ a {
     text-decoration: none !important;
 }
 
+.navigation a:hover {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
 .navigation {
     display: grid;
     gap: 10px;

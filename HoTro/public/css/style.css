@@ -84,6 +84,16 @@ a {
     border-bottom: 1px solid #E6D090;
 }
 
+.navigation a:hover {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
 .tab_link {
     margin: 0 10px;
     color: #ffff;

@@ -66,6 +66,16 @@ header {
     margin-top: 30px;
 }
 
+.navigation a:hover {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
 .tab_link_active {
     color: #E6D090;
     margin: 0 10px;

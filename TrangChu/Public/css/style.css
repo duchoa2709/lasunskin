@@ -138,6 +138,16 @@ header .cart div {
     margin-top: 30px;
 }
 
+.navigation a:hover {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
 .tab_link_active {
     color: #E6D090;
     margin: 0 10px;
@@ -297,6 +307,12 @@ header .cart div {
     margin-top: 30px;
 }
 
+.loadMoreProduct:hover {
+    background-color: #E1BD54;
+    color: #333333;
+    transition: 0.5s;
+}
+
 .news {
     background: rgba(230, 208, 144, 0.15);
     padding: 5% 0;
@@ -426,6 +442,12 @@ header .cart div {
     font-size: 17px;
     font-family: Kanit;
     font-weight: 300;
+}
+
+.loadMoreNews:hover {
+    background-color: #333;
+    color: #fff;
+    transition: 0.5s;
 }
 
 .itemLoadMore {
@@ -593,4 +615,9 @@ footer .nameCompany {
     bottom: 10%;
     right: 10%;
     display: block;
+    background-color: #858585;
+}
+
+.account_content a:hover {
+    color: #E6D090;
 }

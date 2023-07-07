@@ -4,6 +4,14 @@
     line-height: 20px;
     letter-spacing: 0.8px;
 }
+
+.topHeader {
+    background-color: #2b3990;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+}
+
 header {
     padding-top: 20px;
     flex-shrink: 0;
@@ -163,24 +171,6 @@ header {
     padding-top: 50px;
 }
 
-/*.product::before {*/
-/*    content: "aaaaa";*/
-/*    width: 63px;*/
-/*    height: 35px;*/
-/*    background-color: #E1BD54;*/
-/*    background-repeat: no-repeat;*/
-/*    border-radius: 30px;*/
-/*    padding-left: 10px;*/
-/*}*/
-
-/*.product::after{*/
-/*    content: "";*/
-/*    width: 63px;*/
-/*    height: 35px;*/
-/*    background-color: #333333;*/
-/*    background-repeat: no-repeat;*/
-/*    border-radius: 30px;*/
-/*}*/
 .info {
     display: flex;
     align-items: center;
@@ -195,6 +185,9 @@ header {
     background-color: #E1BD54;
     border-radius: 30px;
     padding: 5px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .info::after {
@@ -206,6 +199,9 @@ header {
     background-color: #333333;
     border-radius: 30px;
     padding: 5px 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .infoProduct {
@@ -358,10 +354,10 @@ header {
     border: none;
     font-size: 16px;
     margin-top: 30px;
-    border: 1px solid var(--2, #333);
+    border: 1px solid  #333;
     background-color: transparent;
 
-    color: var(--2, #333);
+    color:  #333;
     font-size: 17px;
     font-family: Kanit;
     font-weight: 300;

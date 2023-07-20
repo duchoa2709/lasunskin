@@ -1,0 +1,629 @@
+body {
+    font-family: Kanit;
+    font-style: normal;
+}
+
+.shopping{
+    position: relative;
+}
+.buy-now a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.shopping::after{
+    content: "0";
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    right: 6px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+header {
+    padding-top: 20px;
+    background: #000;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.navigation a:hover {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
+.navigation {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.logo {
+    padding-top: 25px;
+}
+
+.text-left {
+    margin-left: 10px;
+}
+
+.text-right {
+    margin-right: 10px;
+}
+
+.call {
+    margin: 0 10px;
+    width: 16px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.line {
+    background: #494949;
+    width: 100%;
+    height: 1px;
+    margin-top: 30px;
+}
+
+.linex {
+    background: rgba(230, 230, 230, 1);
+    width: 100%;
+    height: 1px;
+    margin-top: 30px;
+}
+
+.tab_link_active {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tab_link {
+    margin: 0 10px;
+    color: #ffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tab_link_active {
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
+.header_tag {
+    padding: 10px 0;
+    margin: 0 -2px;
+    text-align: center;
+}
+
+footer {
+    background-color: #000;
+    padding: 5% 0;
+}
+
+footer .grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.colum1 {
+    margin: 0 -12%;
+}
+
+.colum1>.logo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.colum1>.textLogo {
+    width: 32.786px;
+    height: auto;
+}
+
+.font {
+    color: #ffff;
+    text-align: center;
+    font-size: 17px;
+    font-family: Kanit;
+    font-weight: 300;
+}
+
+footer .nameCompany {
+
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8% 0;
+}
+
+.comapyLocation {
+    text-align: left;
+}
+
+.colum1>.phone {
+    text-align: left;
+    padding: 2% 0;
+}
+
+.colum1>.email {
+    text-align: left;
+}
+
+.colum2>.font {
+    text-align: left;
+    margin-left: 20%;
+}
+
+.colum2>h2 {
+    padding-bottom: 10%;
+}
+
+.colum2>img {
+    padding-right: 20px;
+}
+
+.colum2 a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.colum2>.font>div {
+    padding-bottom: 6%;
+}
+
+.logoShop {
+    padding-right: 10px;
+    padding-bottom: 10%;
+}
+
+.phone2 {
+    padding-bottom: 10%;
+    font-size: 27px;
+}
+
+.colum2>.hootline {
+    padding-bottom: 0%;
+}
+
+.cpLeft {
+    text-align: left;
+    font-size: 14px;
+    float: left;
+}
+
+.colum2 .about {
+    padding-bottom: 10%;
+    text-align: left;
+}
+
+.colum2>.font {
+    text-align: left;
+    margin-left: 20%;
+}
+
+.colum2>h2 {
+    padding-bottom: 10%;
+}
+
+.cpRight {
+    text-align: right;
+    font-size: 14px;
+    float: right;
+}
+
+.copyright {
+    background-color: #0D0D0D;
+    padding: 1% 0;
+    display: flex;
+}
+
+.cpRight>a {
+    color: #ffff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    display: block;
+}
+
+.page-title {
+    position: relative;
+    padding: 15px 0;
+}
+
+.page-title::before {
+    content: "";
+    color: #333;
+}
+
+.page-title a {
+    text-decoration: none;
+    margin: 0 10px;
+
+    color: #444;
+    font-size: 15px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.page-title a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    color: #777;
+    font-size: 15px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.info-product .grid {
+    display: grid;
+    gap: 72px;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+
+.grid-clild {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    position: relative;
+}
+
+.grid-clild::after {
+    position: absolute;
+    content: "";
+    background-image: url(../img/data/left.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 6%;
+    height: 100%;
+    top: -20px;
+    left: -50px;
+}
+
+.grid-clild::before {
+    position: absolute;
+    content: "";
+    background-image: url(../img/data/right.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 6%;
+    height: 100%;
+    top: -20px;
+    right: -50px;
+}
+
+.grid .img-active {
+    width: 659px;
+    height: 659px;
+    object-fit: cover;
+}
+
+.grid .img-noactive {
+    width: 137px;
+    height: 137px;
+    object-fit: cover;
+}
+
+.info-product .col {
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 3fr 1fr;
+}
+
+.content{
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+
+.content h1 {
+    color: #333;
+    font-size: 34px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.infomation-product .grid-button {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 0;
+    position: relative;
+}
+
+.infomation-product .maSP {
+    color: #333;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 4% 0;
+}
+
+.infomation-product .maSP span {
+    font-weight: bold;
+}
+
+.infomation-product .dungTich {
+    color: #333;
+    font-size: 15px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 4% 0;
+}
+
+.infomation-product .dungTich .active {
+    color: #333;
+    font-weight: bold;
+}
+
+.infomation-product .dungTich>a {
+    color: #333;
+    font-size: 17px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.infomation-product .dungTich>b {
+    color: #5C5C5C;
+    font-size: 17px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 275;
+    line-height: 20px;
+}
+
+.number-of {
+    color: #333;
+    font-size: 17px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.btn-soluong {
+    background-color: #fff;
+    border-radius: 0;
+    color: #333;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 10px 20px;
+    text-align: left;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.btn-wrapper {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-soluong input {
+    text-align: center;
+    width: 30%;
+    height: 40px;
+    border: none;
+}
+
+.btn-soluong button {
+    background-color: rgba(244, 244, 244, 1);
+    color: #333;
+    padding: 4px 12px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    text-align: center;
+}
+
+.btn-soluong button:hover {
+    background-color: rgba(244, 244, 244, 1);
+    color: #fff;
+    background: #333;
+}
+
+.btn-soluong .number {
+    width: 70px;
+    height: 40px;
+    border: none;
+    text-align: center;
+}
+
+.infomation-product .price {
+    color: #333;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 1em 0;
+}
+
+.infomation-product .grid-button button {
+    background-color: #fff;
+    border-radius: 0;
+    color: #333;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.50) !important;
+}
+
+.infomation-product .grid-button .add-to-cart>img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.infomation-product .grid-button .buy-now {
+    background-color: #333;
+    color: #fff;
+}
+
+.infomation-product .descripition {
+    background-color: #000;
+    color: #fff;
+    padding: 0 3%;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infomation-product .noactive {
+    background-color: #fff;
+    color: #000;
+    padding: 0 3%;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.50) !important;
+}
+
+.des {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.infomation-product .info {
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    margin-bottom: 18px;
+}
+
+.infomation-product .info>.content {
+    padding: 3% 3%;
+    overflow: hidden;
+    color: #333;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.75px;
+}
+
+.infoProduct .info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.infoProduct .info::before {
+    content: "NEW";
+    text-align: center;
+    width: 63px;
+    height: 35px;
+    background-color: #E1BD54;
+    border-radius: 30px;
+    padding: 5px 12px;
+}
+
+.infoProduct .info::after {
+    content: "30%";
+    text-align: center;
+    color: #FFFFFF;
+    width: 63px;
+    height: 35px;
+    background-color: #333333;
+    border-radius: 30px;
+    padding: 5px 17px;
+}
+
+.infoProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 20px 0;
+}
+
+.rowProducts{
+    display: grid;
+    gap: 95px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5% 0;
+    position: relative;
+}
+
+.rowProducts::after {
+    position: absolute;
+    content: "";
+    background-image: url(../img/data/left.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 6%;
+    height: 100%;
+    top: -20px;
+    left: -50px;
+}
+
+.rowProducts::before {
+    position: absolute;
+    content: "";
+    background-image: url(../img/data/right.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    width: 6%;
+    height: 100%;
+    top: -20px;
+    right: -50px;
+}

@@ -1,0 +1,429 @@
+* {
+    font-family: Kanit;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+}
+
+header {
+    padding-top: 20px;
+    background: #000;
+}
+
+.shopping {
+    position: relative;
+}
+
+.shopping::after {
+    content: "0";
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    right: 6px;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.navigation {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.logo {
+    padding-top: 25px;
+}
+
+.text-left {
+    margin-left: 10px;
+}
+
+.text-right {
+    margin-right: 10px;
+}
+
+.call {
+    margin: 0 10px;
+    width: 16px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.line {
+    background: #494949;
+    width: 100%;
+    height: 1px;
+    margin-top: 30px;
+}
+
+.linex {
+    background: rgba(230, 230, 230, 1);
+    width: 100%;
+    height: 1px;
+    margin-top: 30px;
+}
+
+.tab_link_active {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 22px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
+.navigation a:hover {
+    color: #E6D090;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 0;
+    border-bottom: 1px solid #E6D090;
+}
+
+.tab_link {
+    margin: 0 10px;
+    color: #ffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.header_tag {
+    padding: 10px 0;
+    margin: 0 -2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+footer {
+    background-color: #000;
+    padding: 5% 0;
+}
+
+footer .grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.colum1 {
+    margin: 0 -12%;
+}
+
+.colum1>.logo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.colum1>.textLogo {
+    width: 32.786px;
+    height: auto;
+}
+
+.font {
+    color: #ffff;
+    text-align: center;
+    font-size: 17px;
+    font-family: Kanit;
+    font-weight: 300;
+}
+
+footer .nameCompany {
+
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8% 0;
+}
+
+.comapyLocation {
+    text-align: left;
+}
+
+.colum1>.phone {
+    text-align: left;
+    padding: 2% 0;
+}
+
+.colum1>.email {
+    text-align: left;
+}
+
+.colum2>.font {
+    text-align: left;
+    margin-left: 20%;
+}
+
+.colum2>h2 {
+    padding-bottom: 10%;
+}
+
+.colum2>img {
+    padding-right: 20px;
+}
+
+.colum2 a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.colum2>.font>div {
+    padding-bottom: 6%;
+}
+
+.logoShop {
+    padding-right: 10px;
+    padding-bottom: 10%;
+}
+
+.phone2 {
+    padding-bottom: 10%;
+    font-size: 27px;
+}
+
+.colum2>.hootline {
+    padding-bottom: 0%;
+}
+
+.cpLeft {
+    text-align: left;
+    font-size: 14px;
+    float: left;
+}
+
+.colum2 .about {
+    padding-bottom: 10%;
+    text-align: left;
+}
+
+.colum2>.font {
+    text-align: left;
+    margin-left: 20%;
+}
+
+.colum2>h2 {
+    padding-bottom: 10%;
+}
+
+.cpRight {
+    text-align: right;
+    font-size: 14px;
+    float: right;
+}
+
+.copyright {
+    background-color: #0D0D0D;
+    padding: 1% 0;
+    display: flex;
+}
+
+.cpRight>a {
+    color: #ffff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    display: block;
+}
+
+
+.page-title {
+    position: relative;
+    padding: 15px 0;
+}
+
+.page-title::before {
+    content: "";
+    color: #333;
+}
+
+.page-title a {
+    text-decoration: none;
+    margin: 0 10px;
+
+    color: #444;
+    font-size: 15px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.page-title a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    color: #777;
+    font-size: 15px;
+    font-family: Kanit;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+}
+
+/* ------------------------------------------------------- */
+
+main {
+    padding: 5% 0;
+}
+
+main h1 {
+    color: #333;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 3px;
+}
+
+main .input {
+    text-align: center;
+    margin: 5% 0;
+    padding: 10px 0;
+
+}
+
+main .input input {
+    width: 50%;
+    height: 49px;
+    border: 1px solid #000;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+main .input button {
+    width: 49px;
+    height: 49px;
+    border: 1px solid #000;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+/*---------------- dia chi  ----------------------*/
+
+.store {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:100px;
+}
+
+.store .card {
+    border: 1px solid rgba(206, 206, 206, 1);
+    width: 586px;
+    height: 307px;
+    padding: 27px 36px 38px 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store .item {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 3fr;
+    padding: 20px;
+}
+
+.store .item .text {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 10fr;
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.store .card .contact {
+    display: flex;
+    vertical-align: middle;
+}
+
+.store .card .contact>div {
+    margin-right: 10px;
+}
+
+.store .card .contact .img-contact {
+    padding-right: 20px;
+}
+
+.store .card .contact .messenger {
+    width: 206px;
+    height: 45px;
+    background-color: #3b5998;
+    color: #fff;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store .card .contact .phone {
+    width: 232px;
+    height: 45px;
+    background-color: #ededed;
+    color: #000;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store .card .contact .info {
+    width: 55px;
+    height: 45px;
+    background-color: #ededed;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store .card .item .info h3 {
+    color: #E1BD54;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.store .card .item .info a {
+    color: #3B5998;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 21px;
+}

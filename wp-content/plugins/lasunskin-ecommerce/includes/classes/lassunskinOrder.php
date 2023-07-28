@@ -1,9 +1,9 @@
 <?php 
 class lasunskinOrder{
-    private $_orders = "0";
-    public function __construt(){
+    private $_orders = "";
+    public function __construct(){
         global $wpdb;
-        $this->_orders = $wpdb->prefix.'lasunskin_orders';
+        $this->_orders = $wpdb->prefix.'orders';//wp_orders
     }
 
     public function all() {

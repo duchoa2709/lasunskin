@@ -16,3 +16,6 @@ include_once lasunskin_PATH.'includes/admin_settings.php';
 
 //Làm việc với CSDL trong wp
 include_once lasunskin_PATH.'includes/classes/lassunskinOrder.php';
+
+//dang ki function
+include_once lasunskin_PATH.'includes/functions.php';

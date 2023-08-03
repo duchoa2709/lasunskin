@@ -15,3 +15,9 @@ if (!function_exists('pr')) {
         echo '</pre>';
     }
 }
+
+if (!function_exists('custom_redirect')) {
+    function custom_redirect($url) {
+        echo "<script>window.location.href = '$url'</script>";
+    }
+}

@@ -19,3 +19,6 @@ include_once lasunskin_PATH.'includes/classes/lassunskinOrder.php';
 
 //dang ki function
 include_once lasunskin_PATH.'includes/functions.php';
+
+//dang ki ajaxs
+include_once lasunskin_PATH.'includes/admin_ajaxs.php';

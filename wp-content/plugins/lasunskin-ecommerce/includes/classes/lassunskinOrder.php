@@ -1,10 +1,11 @@
 <?php 
 class lasunskinOrder{
-    private $_orders = "";
-    public function __construct(){
-        global $wpdb;
-        $this->_orders = $wpdb->prefix.'orders';//wp_orders
-    }
+        private $_orders = ""; // Biến để lưu trữ tên bảng "orders" của cơ sở dữ liệu WordPress
+    
+        public function __construct() {
+            global $wpdb;
+            $this->_orders = $wpdb->prefix . 'orders'; // Gán tên bảng "orders" vào biến $_orders, sử dụng tiền tố của cơ sở dữ liệu WordPress
+        }
 
     public function all() {
         global $wpdb;
@@ -13,24 +14,54 @@ class lasunskinOrder{
         return $items;
     }
 
-    public function paginate($limit = 10, $page = 1) {
+    public function paginate($limit = 20 ) {
         global $wpdb;
+        
+        // pr($_REQUEST);
+    
+        $s = isset($_REQUEST['s']) ? $_REQUEST['s'] : '';
+        $status = isset($_REQUEST['status']) ? $_REQUEST['status'] : '';
+        $paged = isset($_REQUEST['paged']) ? $_REQUEST['paged'] : 1;
+    
+        // Đếm tổng số record có trong bảng "orders" để tính số trang
+        $sql_count = "SELECT COUNT(id) FROM $this->_orders WHERE deleted = 0";
+        if ($s) {
+            $sql_count .= " AND customer_name LIKE '%$s%' OR customer_phone LIKE '%$s%' OR customer_email LIKE '%$s%'";
+        }
+        if ($status) {
+            $sql_count .= " AND status = '$status'";
+        }
+        $total_items = $wpdb->get_var($sql_count);
 
-        //lay tong so record
-        $sql = "SELECT count(id) FROM $this->_orders";
-        $total = $wpdb->get_var($sql);
-
-        //tinh so trang
-        $totalPage  = ceil($total/$limit);
-        $offset     = ($page * $limit1) - $limit;
-
-        //lay du lieu
-        $sql = "SELECT * FROM $this->_orders ORDER BY id DESC LIMIT $limit OFFSET $offset";
-
+        
+        // Tính số trang dựa trên số record và giới hạn số record trên mỗi trang
+        $total_pages = ceil($total_items / $limit);
+    
+        // Tính giá trị offset để xác định phạm vi của trang hiện tại
+        $offset = ($paged * $limit) - $limit;
+    
+        // Lấy dữ liệu từ bảng "orders" dựa trên giới hạn và offset
+        $sql = "SELECT * FROM $this->_orders WHERE deleted = 0";
+        if ($s) {
+            $sql .= " AND customer_name LIKE '%$s%' OR customer_phone LIKE '%$s%' OR customer_email LIKE '%$s%'";
+        }
+        if ($status) {
+            $sql .= " AND status = '$status'";
+        }
+        $sql .= " ORDER BY id DESC"; // Sắp xếp dữ liệu theo thứ tự giảm dần của trường "id"
+        $sql .= " LIMIT $limit OFFSET $offset"; // Giới hạn số record trên mỗi trang và offset
+    
         $items = $wpdb->get_results($sql);
-        return $items;
-
+    
+        // Trả về thông tin về phân trang và dữ liệu trang hiện tại
+        return [
+            'total_pages'     => $total_pages,    // Tổng số trang      
+            'total_items' => $total_items,      // Tổng số record có trong bảng "orders"
+            'items'     => $items           // Dữ liệu trang hiện tại
+        ];
     }
+    
+    
 
     public function find($id) {
         global $wpdb;
@@ -48,13 +79,22 @@ class lasunskinOrder{
 
     public function update($id,$data) {
         global $wpdb;
-        $wpdb->update($this->_orders,$data,array('id' => $id));
+        $wpdb->update($this->_orders,$data,['id' => $id]);
         return true;
     }
 
     public function destroy($id) {
         global $wpdb;
         $wpdb->delete($this->_orders,['id' => $id]);
+        return true;
+    }
+
+    public function trash($id) {
+        global $wpdb;
+        $wpdb->update($this->_orders,
+        [ 'deleted'  => 1 ],
+        ['id' => $id]
+        );
         return true;
     }
 }

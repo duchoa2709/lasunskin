@@ -1,22 +1,31 @@
 <div class="wrap">
-    <h1 class="wp-heading-inline"><?= __('Manage Orders', 'lasunskin-ecommerce'); ?></h1>
+    <h1 class="wp-heading-inline"><?=__('Manage Orders', 'lasunskin-ecommerce');?></h1>
     <hr class="wp-header-end">
     <ul class="subsubsub">
-        <li class="all"><a href="admin.php?page=lasunskin-orders" class="current"><?= __('All', 'lasunskin-ecommerce'); ?> <span
-                    class="count">(<?= $total_items; ?>)</span></a>
+        <li class="all"><a href="admin.php?page=lasunskin-orders"
+                class="current"><?= __('All', 'lasunskin-ecommerce'); ?>
+                <span class="count"> (<?= $total_items; ?>) </span></a>
             |</li>
-        <li class="publish"><a href="admin.php?page=lasunskin-orders&status=pending"><?= __('New Orders', 'lasunskin-ecommerce'); ?></a> |</li>
-        <li class="publish"><a href="admin.php?page=lasunskin-orders&status=completed"><?= __('Complete Orders', 'lasunskin-ecommerce'); ?></a> |
+        <li class="publish"><a
+                href="admin.php?page=lasunskin-orders&status=pending"><?= __('New Orders', 'lasunskin-ecommerce'); ?></a>
+            |</li>
+        <li class="publish"><a
+                href="admin.php?page=lasunskin-orders&status=completed"><?= __('Complete Orders', 'lasunskin-ecommerce'); ?></a>
+            |
         </li>
-        <li class="publish"><a href="admin.php?page=lasunskin-orders&status=canceled"><?= __('Canceled Orders', 'lasunskin-ecommerce'); ?></a></li>
+        <li class="publish"><a
+                href="admin.php?page=lasunskin-orders&status=canceled"><?= __('Canceled Orders', 'lasunskin-ecommerce'); ?></a>
+        </li>
     </ul>
     <form id="posts-filter" method="get">
         <input type="hidden" name="page" value="lasunskin-orders">
         <!-- <input type="hidden" name="paged" value="1"> -->
         <p class="search-box">
-            <label class="screen-reader-text" for="post-search-input"><?= __('Search Orders', 'lasunskin-ecommerce'); ?></label>
+            <label class="screen-reader-text"
+                for="post-search-input"><?= __('Search Orders', 'lasunskin-ecommerce'); ?></label>
             <input type="search" id="post-search-input" name="s" value="">
-            <input type="submit" id="search-submit" class="button" value="<?= __('Search Orders', 'lasunskin-ecommerce'); ?>">
+            <input type="submit" id="search-submit" class="button"
+                value="<?= __('Search Orders', 'lasunskin-ecommerce'); ?>">
         </p>
         <div class="tablenav top">
             <div class="alignleft actions bulkactions">
@@ -57,14 +66,16 @@
             </thead>
             <tbody id="the-list">
                 <?php foreach ($items as $item): ?>
-                <tr id="post-<?= $item->id;?>" class="iedit author-self level-0 post-<?= $item->id;?> status-publish hentry">
+                <tr id="post-<?= $item->id;?>"
+                    class="iedit author-self level-0 post-<?= $item->id;?> status-publish hentry">
 
                     <th scope="row" class="check-column">
                         <input id="cb-select-<?= $item->id;?>" type="checkbox" name="post[]" value="<?= $item->id;?>">
                     </th>
                     <td class="title column-title has-row-actions column-primary page-title" data-colname="Tiêu đề">
                         <strong>
-                            <a class="row-title" href="admin.php?page=lasunskin-orders&order_id=<?= $item->id; ?>"># <?= $item->id;  ?></a>
+                            <a class="row-title" href="admin.php?page=lasunskin-orders&order_id=<?= $item->id; ?>">#
+                                <?= $item->id;  ?></a>
                         </strong>
                     </td>
                     <td><?= number_format($item->total);  ?></td>
@@ -72,9 +83,12 @@
                     <td><?= $item->customer_phone; ?></td>
                     <td>
                         <select data-order-id="<?php echo $item->id; ?>" name="" id="" class="order_status">
-                            <option <?= $item->status == 'pending' ? 'selected' : '';?> value="pending">Đơn hàng mới</option>
-                            <option <?= $item->status == 'completed' ? 'selected' : '';?> value="completed">Đơn đã hoàn thành</option>
-                            <option <?= $item->status == 'canceled' ? 'selected' : '';?> value="canceled">Đơn đã hủy</option>
+                            <option <?= $item->status == 'pending' ? 'selected' : '';?> value="pending">Đơn hàng mới
+                            </option>
+                            <option <?= $item->status == 'completed' ? 'selected' : '';?> value="completed">Đơn đã hoàn
+                                thành</option>
+                            <option <?= $item->status == 'canceled' ? 'selected' : '';?> value="canceled">Đơn đã hủy
+                            </option>
                         </select>
                     </td>
                     <td class="date column-date"><?= date('d-m-Y',strtotime($item->created)) ; ?></td>

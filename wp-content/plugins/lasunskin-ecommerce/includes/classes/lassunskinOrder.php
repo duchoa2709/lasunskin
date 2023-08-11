@@ -4,7 +4,8 @@ class lasunskinOrder{
     
         public function __construct() {
             global $wpdb;
-            $this->_orders = $wpdb->prefix . 'orders'; // Gán tên bảng "orders" vào biến $_orders, sử dụng tiền tố của cơ sở dữ liệu WordPress
+            $this->_orders = $wpdb->prefix . 'lasunskin_orders'; // Gán tên bảng "orders" vào biến $_orders, sử dụng tiền tố của cơ sở dữ liệu WordPress
+            $this->_orders_detail = $wpdb->prefix . 'lasunskin_orders_detail'; // Gán tên bảng "orders" vào biến $_orders, sử dụng tiền tố của cơ sở dữ liệu WordPress
         }
 
     public function all() {
@@ -80,7 +81,8 @@ class lasunskinOrder{
     public function update($id,$data) {
         global $wpdb;
         $wpdb->update($this->_orders,$data,['id' => $id]);
-        return true;
+        $item = $this->find($id);
+        return $item;
     }
 
     public function destroy($id) {
@@ -97,4 +99,24 @@ class lasunskinOrder{
         );
         return true;
     }
+
+    public function change_status($order_id,$status) {
+        global $wpdb;
+        $wpdb->update($this->_orders,
+        [ 'status'  => $status ],
+        ['id' => $order_id]
+        );
+        return true;
+    }
+
+    public function order_items($order_id) {
+        global $wpdb;
+        $sql = "SELECT products.post_title as products_name, orders_detail.* FROM $this->_orders_detail AS orders_detail
+        JOIN $wpdb->posts AS products ON products.ID = orders_detail.product_id
+        WHERE orders_detail.order_id = $order_id
+        ORDER BY orders_detail.id DESC";
+        $items = $wpdb->get_results($sql);
+        return $items;
+    }
+    
 }

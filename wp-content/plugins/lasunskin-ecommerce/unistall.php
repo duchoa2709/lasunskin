@@ -6,10 +6,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
     die;
 }
 
-//xoa CSDL
-// drop a custom database table
-
-// global $wpdb;
-// $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}mytable" );
-
-//Xoa Option
+//xoa csdl
+include_once lasunskin_PATH.'includes/db/migration-rollback.php';
+//xoa option
+delete_option('lasunskin_settings_options');

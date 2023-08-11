@@ -2,7 +2,7 @@
 $page = isset( $_REQUEST['paged']) ? $_REQUEST['paged'] : 1;
 ?>
 <div class="tablenav-pages">
-    <span class="displaying-num">3 mục</span>
+    <span class="displaying-num"><?= $total_items; ?> mục</span>
     <span class="pagination-links">
         <?php if($page > 1): ?>
         <a class="prev-page button" href="admin.php?page=lasunskin-orders&paged=<?=$page - 1;?>">

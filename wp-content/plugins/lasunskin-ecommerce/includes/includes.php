@@ -22,3 +22,6 @@ include_once lasunskin_PATH.'includes/functions.php';
 
 //dang ki ajaxs
 include_once lasunskin_PATH.'includes/admin_ajaxs.php';
+
+//dang ki apis
+include_once lasunskin_PATH.'includes/apis.php';

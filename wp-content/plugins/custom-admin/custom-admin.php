@@ -31,5 +31,6 @@ function dh_custom_logo() { ?>
         box-shadow: 0 0 10px #000;
     }
     </style>
-<?php }
+<?php 
+}
 add_action('login_enqueue_scripts', 'dh_custom_logo');

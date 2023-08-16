@@ -23,7 +23,7 @@
         <p class="search-box">
             <label class="screen-reader-text"
                 for="post-search-input"><?= __('Search Orders', 'lasunskin-ecommerce'); ?></label>
-            <input type="search" id="post-search-input" name="s" value="">
+            <input type="search" id="post-search-input" name="s" value="" placeholder="<?= __('Search Order', 'lasunskin-ecommerce'); ?>">
             <input type="submit" id="search-submit" class="button"
                 value="<?= __('Search Orders', 'lasunskin-ecommerce'); ?>">
         </p>
@@ -31,20 +31,20 @@
             <div class="alignleft actions bulkactions">
                 <label for="bulk-action-selector-top" class="screen-reader-text">Lựa chọn thao tác hàng loạt</label>
                 <select name="action" id="bulk-action-selector-top">
-                    <option value="-1">Hành động</option>
-                    <option value="trash">Bỏ vào thùng rác</option>
+                    <option value="-1"><?= __('Action', 'lasunskin-ecommerce'); ?></option>
+                    <option value="trash"><?= __('Delete', 'lasunskin-ecommerce'); ?></option>
                 </select>
-                <input type="submit" id="doaction" class="button action" value="Áp dụng">
+                <input type="submit" id="doaction" class="button action" value="<?= __('Apply', 'lasunskin-ecommerce'); ?>">
             </div>
             <div class="alignleft actions">
                 <label class="screen-reader-text" for="cat">Lọc theo danh mục</label>
                 <select name="status" id="cat" class="postform">
-                    <option value="0">Tất cả trạng thái</option>
-                    <option class="level-0" value="pending">Đơn hàng mới</option>
-                    <option class="level-0" value="completed">Đơn đã hoàn thành</option>
-                    <option class="level-0" value="canceled">Đơn đã hủy</option>
+                    <option value="0"><?= __('All Categories', 'lasunskin-ecommerce'); ?></option>
+                    <option class="level-0" value="pending"><?= __('Order Pending', 'lasunskin-ecommerce'); ?></option>
+                    <option class="level-0" value="completed"><?= __('Order Completed', 'lasunskin-ecommerce'); ?></option>
+                    <option class="level-0" value="canceled"><?= __('Order Canceled', 'lasunskin-ecommerce'); ?></option>
                 </select>
-                <input type="submit" id="post-query-submit" class="button" value="Lọc">
+                <input type="submit" id="post-query-submit" class="button" value="<?= __('Filter', 'lasunskin-ecommerce'); ?>">
             </div>
 
             <?php include lasunskin_PATH.'includes/admin_pages/elements/elements-panigation.php'; ?>
@@ -56,12 +56,12 @@
                 <tr>
                     <td id="cb" class="manage-column column-cb check-column"><label class="screen-reader-text"
                             for="cb-select-all-1">Chọn toàn bộ</label><input id="cb-select-all-1" type="checkbox"></td>
-                    <th class="manage-column column-primary">Mã đơn hàng</th>
-                    <th class="manage-column">Tổng tiền</th>
-                    <th class="manage-column">Khách hàng</th>
-                    <th class="manage-column">Điện thoại</th>
-                    <th class="manage-column">Trạng thái</th>
-                    <th class="manage-column">Thời gian</th>
+                    <th class="manage-column column-primary"><?= __('ID', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Total', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Customer', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Phone', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Status', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Time', 'lasunskin-ecommerce'); ?></th>
                 </tr>
             </thead>
             <tbody id="the-list">
@@ -83,12 +83,10 @@
                     <td><?= $item->customer_phone; ?></td>
                     <td>
                         <select data-order-id="<?php echo $item->id; ?>" name="" id="" class="order_status">
-                            <option <?= $item->status == 'pending' ? 'selected' : '';?> value="pending">Đơn hàng mới
+                            <option <?= $item->status == 'pending' ? 'selected' : '';?> value="pending"><?= __('Order Pending', 'lasunskin-ecommerce'); ?>
                             </option>
-                            <option <?= $item->status == 'completed' ? 'selected' : '';?> value="completed">Đơn đã hoàn
-                                thành</option>
-                            <option <?= $item->status == 'canceled' ? 'selected' : '';?> value="canceled">Đơn đã hủy
-                            </option>
+                            <option <?= $item->status == 'completed' ? 'selected' : '';?> value="completed"><?= __('Order Completed', 'lasunskin-ecommerce'); ?></option>
+                            <option <?= $item->status == 'canceled' ? 'selected' : '';?> value="canceled"><?= __('Order Canceled', 'lasunskin-ecommerce'); ?></option>
                         </select>
                     </td>
                     <td class="date column-date"><?= date('d-m-Y',strtotime($item->created)) ; ?></td>
@@ -97,14 +95,14 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td id="cb" class="manage-column column-cb check-column"><label class="screen-reader-text"
+                <td id="cb" class="manage-column column-cb check-column"><label class="screen-reader-text"
                             for="cb-select-all-1">Chọn toàn bộ</label><input id="cb-select-all-1" type="checkbox"></td>
-                    <th class="manage-column column-primary">Mã đơn hàng</th>
-                    <th class="manage-column">Tổng tiền</th>
-                    <th class="manage-column">Khách hàng</th>
-                    <th class="manage-column">Điện thoại</th>
-                    <th class="manage-column">Trạng thái</th>
-                    <th class="manage-column">Thời gian</th>
+                    <th class="manage-column column-primary"><?= __('ID', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Total', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Customer', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Phone', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Status', 'lasunskin-ecommerce'); ?></th>
+                    <th class="manage-column"><?= __('Time', 'lasunskin-ecommerce'); ?></th>
                 </tr>
             </tfoot>
         </table>
@@ -112,11 +110,11 @@
             <div class="alignleft actions bulkactions">
                 <label for="bulk-action-selector-bottom" class="screen-reader-text">Lựa chọn thao tác hàng loạt</label>
                 <select name="action2" id="bulk-action-selector-bottom">
-                    <option value="-1">Hành động</option>
-                    <option value="edit" class="hide-if-no-js">Chỉnh sửa</option>
-                    <option value="trash">Bỏ vào thùng rác</option>
+                    <option value="-1"><?= __('Action', 'lasunskin-ecommerce'); ?></option>
+                    <option value="edit" class="hide-if-no-js"><?= __('Edit', 'lasunskin-ecommerce'); ?></option>
+                    <option value="trash"><?= __('Delete', 'lasunskin-ecommerce'); ?></option>
                 </select>
-                <input type="submit" id="doaction2" class="button action" value="Áp dụng">
+                <input type="submit" id="doaction2" class="button action" value="<?= __('Apply', 'lasunskin-ecommerce'); ?>">
             </div>
             <div class="alignleft actions">
             </div>
@@ -127,3 +125,32 @@
         </div>
     </form>
 </div>
+<script>
+    // Đường dẫn xử lý ajax
+    let nonce = '<?= wp_create_nonce('lasunskin_save_order'); ?>';
+    let ajax_url = '<?= admin_url('admin-ajax.php'); ?>';
+    jQuery(document).ready(function(){
+        jQuery('.order_status').on('change',function(){
+            var orderId = jQuery(this).attr("data-order_id"); // Sửa thuộc tính từ "data-order-id" thành "data-order_id"
+            let status = jQuery(this).val();
+            
+            jQuery.ajax({
+                url     : ajax_url,
+                method  : 'POST',
+                dataType: 'json',
+                data: {
+                    action  : 'lasunkin_order_change_status',
+                    order_id: orderId,
+                    status  : status,
+                    _nonce   : nonce
+                },
+                success : function(res){
+                    alert('Cập nhật trạng thái thành công'); // Sửa "arlet" thành "alert"
+                },
+                error   : function(error){
+                    alert('Cập nhật trạng thái thất bại'); // Sửa "arlet" thành "alert"
+                }
+            })
+        })
+    })
+</script>

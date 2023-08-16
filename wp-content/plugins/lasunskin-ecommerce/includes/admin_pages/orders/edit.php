@@ -5,7 +5,20 @@
         $order = $objLasunskinOrder->find($orderId);
         $orderItems = $objLasunskinOrder->order_items($orderId);
     }
-    pr($orderItems);
+
+    if (isset ($_POST['lasunskin_save_order'])) {
+        check_admin_referer('lasunskin_save_order');
+            $order_status = isset($_REQUEST['order_status']) ? $_REQUEST['order_status'] : '';
+            $note = isset($_REQUEST['note']) ? $_REQUEST['note'] : '';
+            $objLasunskinOrder->update($orderId,[
+                'status' => $order_status,
+                'note' => $note
+            ]);
+    
+            custom_redirect('admin.php?page=lasunskin-orders&order_id='.$orderId);
+            exit();
+        
+    }
 ?>
 
 <style>
@@ -17,6 +30,7 @@
 <div class="wrap">
     <h1 class="wp-heading-inline">Chi tiết đơn hàng số: <?=$order->id;?> </h1>
     <form id="posts-filter" method="post">
+        <?php wp_nonce_field('lasunskin_save_order'); ?>
         <div id="poststuff">
             <div id="post-body" class="metabox-holder columns-2">
                 <!-- Left columns -->
@@ -55,7 +69,7 @@
                                 <tr>
                                     <td>Ghi chú</td>
                                     <td>
-                                        <textarea rows="5" class="large-text" readonly><?=$order->note;?></textarea>
+                                        <textarea name="note" rows="5" class="large-text" ><?=$order->note;?></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -74,18 +88,14 @@
                                     <th>Số lượng</th>
                                     <th>Giá</th>
                                 </tr>
+                                <?php foreach ($orderItems as $orderItems): ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Iphone 11</td>
-                                    <td>1</td>
-                                    <td>20000</td>
+                                    <td><?=$orderItems->product_id;?></td>
+                                    <td><?=$orderItems->products_name;?></td>
+                                    <td><?=$orderItems->quantity;?></td>
+                                    <td><?=number_format($orderItems->price);?></td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Iphone 12</td>
-                                    <td>1</td>
-                                    <td>20000</td>
-                                </tr>
+                                <?php endforeach; ?>
                             </table>
                         </div>
                     </div>
@@ -100,14 +110,14 @@
                             <div class="submitbox">
                                 <p>
                                     <select name="order_status" class="large-text ">
-                                        <option value="pending">Đơn hàng mới</option>
-                                        <option value="completed">Đơn đã hoàn thành</option>
-                                        <option value="canceled">Đơn đã hủy</option>
+                                        <option <?= $order->status == 'pending' ? 'selected' : '';?> value="pending"><?= __('Order Pending', 'lasunskin-ecommerce'); ?></option>
+                                        <option <?= $order->status == 'completed' ? 'selected' : '';?> value="completed"><?= __('Order Completed', 'lasunskin-ecommerce'); ?></option>
+                                        <option <?= $order->status == 'canceled' ? 'selected' : '';?> value="canceled"><?= __('Order Canceled', 'lasunskin-ecommerce'); ?></option>
                                     </select>
                                 </p>
                                 <p>
-                                    <input type="submit" name="submit" id="submit" class="button button-primary"
-                                        value="Lưu thay đổi">
+                                    <input type="submit" name="lasunskin_save_order" id="submit" class="button button-primary"
+                                    value="Lưu thay đổi">
                                 </p>
                             </div>
                         </div>

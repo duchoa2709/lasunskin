@@ -25,11 +25,14 @@ function lasunskin_load_textdomain() {
 }
 
 function lasunskin_load_textdomain_mofile( $mofile, $domain ) {
-    var_dump(lasunskin_PATH);
-    die();
+    // var_dump(lasunskin_PATH);
+    // die();
 	if ( 'lasunskin-ecommerce' === $domain && false !== strpos( $mofile, WP_LANG_DIR . '/plugins/' ) ) {
 		$locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
 		$mofile = lasunskin_PATH . '/languages/' . $domain . '-' . $locale . '.mo';
+        // var_dump($mofile);
+        // die();
+        // C:\xampp\htdocs\wordpress\wp-content\plugins\lasunskin-ecommerce\languages\lasunskin-ecommerce-vi_VN.mo
 	}
 	return $mofile;
 }

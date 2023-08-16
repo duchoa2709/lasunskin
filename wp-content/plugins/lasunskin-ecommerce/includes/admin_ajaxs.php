@@ -7,15 +7,16 @@ function lasunkin_order_change_status() {
     if (isset($_REQUEST['order_id']) && isset($_REQUEST['status'])) {
         $order_id = $_REQUEST['order_id'];
         $status = $_REQUEST['status'];
+        $nonce = $_REQUEST['_nonce'];
 
-        $lassunskinOrder = new lasunskinOrder();
-        $result = $lassunskinOrder->update($order_id, ['status' => $status]);
-
-        if ($result) {
+        if (wp_verify_nonce($nonce, 'lasunskin_save_order')) {
+            $lassunskinOrder = new lasunskinOrder();
+            $result = $lassunskinOrder->update($order_id, ['status' => $status]);
             $res = [
                 'success' => true, // true or false
             ];
-        } else {
+        }
+        else {
             $res = [
                 'success' => false, // true or false
             ];

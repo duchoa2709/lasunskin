@@ -15,15 +15,13 @@
 function dh_custom_logo() { ?>
     <style type="text/css">
     body {
-        background-image: url(<?php echo plugins_url('images/gifbg.gif', __FILE__); ?>) !important;
-        background-size: cover ;
-        background-repeat: no-repeat ;
+        background-image: url(<?php echo plugins_url('images/bgaa.jpg', __FILE__); ?>) !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
     }
 
     #login h1 a {
-        background-image: url(<?php echo plugins_url('images/custom-logo.png', __FILE__); ?>);
-        width: 280px;
-        height: 280px;
+        background-image: url(<?php echo plugins_url('images/Frame.svg', __FILE__); ?>);
         background-size: 100%;
     }
 
